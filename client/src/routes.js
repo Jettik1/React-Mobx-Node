@@ -8,29 +8,29 @@ import {ADMIN_ROUTE, BASKET_ROUTE, SHOP_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, 
 export const authRoutes = [
     {
         path: ADMIN_ROUTE,
-        component: Admin
+        Component: Admin
     },
     {
         path: BASKET_ROUTE,
-        component: Basket
+        Component: Basket
     }
 ]
 
 export const publicRoutes = [
     {
         path: SHOP_ROUTE,
-        component: Shop
+        Component: Shop
     },
     {
         path: LOGIN_ROUTE,
-        component: Auth
+        Component: Auth
     },
     {
         path: REGISTRATION_ROUTE,
-        component: Auth
+        Component: Auth
     },
     {
         path: DEVICE_ROUTE + '/:id',
-        component: DevicePage
+        Component: DevicePage
     }
 ]
