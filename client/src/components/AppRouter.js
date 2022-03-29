@@ -16,7 +16,7 @@ const AppRouter = () => {
     return (
             <Routes>
                 {isAuth && routesAuthComponents}
-                
+                {routesPublicComponents}
             </Routes>
     );
 }
