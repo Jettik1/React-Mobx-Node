@@ -4,9 +4,11 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 /* import { NavLink } from "react-router-dom"; */
 import { SHOP_ROUTE, LOGIN_ROUTE } from "../utils/consts";
 import { observer } from "mobx-react-lite";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = observer(() => {
   const { user } = useContext(Context);
+  const history = useNavigate();
   return (
     <Navbar bg="dark" variant="dark">
       <Container>

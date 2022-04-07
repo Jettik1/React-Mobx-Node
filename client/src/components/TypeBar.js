@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import observer from "mobx-react-lite";
-import Context from "../index";
+import { observer } from "mobx-react-lite";
+import { Context } from "../index";
 import { ListGroup } from "react-bootstrap";
 
 const TypeBar = observer(() => {
@@ -8,7 +8,14 @@ const TypeBar = observer(() => {
   return (
     <ListGroup>
       {device.types.map((type) => (
-        <ListGroup.Item key={type.id}>{type.name}</ListGroup.Item>
+        <ListGroup.Item
+          style={{ cursor: "pointer" }}
+          active={type.id === device.seletcedType.id}
+          onClick={() => device.setSelectedType(type)}
+          key={type.id}
+        >
+          {type.name}
+        </ListGroup.Item>
       ))}
     </ListGroup>
   );
