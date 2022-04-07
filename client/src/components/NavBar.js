@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "..";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 /* import { NavLink } from "react-router-dom"; */
-import { SHOP_ROUTE, LOGIN_ROUTE } from "../utils/consts";
+import { SHOP_ROUTE, LOGIN_ROUTE, ADMIN_ROUTE } from "../utils/consts";
 import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
 
@@ -23,11 +23,16 @@ const NavBar = observer(() => {
         </NavLink> */}
         {user.isAuth ? (
           <Nav className="ml-auto" style={{ color: "white" }}>
-            <Button variant={"outline-light"}>Админ панель</Button>
+            <Button
+              variant={"outline-light"}
+              onClick={() => history(ADMIN_ROUTE)}
+            >
+              Админ панель
+            </Button>
             <Button
               href={LOGIN_ROUTE}
               variant={"outline-light"}
-              onClick={() => user.setIsAuth(false)}
+              onClick={() => history(LOGIN_ROUTE)}
               style={{ marginLeft: "4px" }}
             >
               Выйти
