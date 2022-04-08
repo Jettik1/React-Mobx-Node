@@ -5,6 +5,7 @@ import DeviceStore from "./store/DeviceStore";
 import UserStore from "./store/UserStore";
 
 export const Context = createContext(null);
+console.log(process.env.REACT_APP_API_URL);
 
 ReactDOM.render(
   <React.StrictMode>
