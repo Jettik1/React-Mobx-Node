@@ -34,7 +34,7 @@ const DevicePage = () => {
       </Col>
       <Row className="d-flex flex-column m-3">
         <h1>Описание</h1>
-        {description.map((info, index) => (
+        {/* {description.map((info, index) => (
           <Row
             key={info.id}
             style={{
@@ -44,7 +44,7 @@ const DevicePage = () => {
           >
             {info.title}: {info.description}
           </Row>
-        ))}
+        ))} */}
       </Row>
     </Container>
   );

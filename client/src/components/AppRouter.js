@@ -19,7 +19,7 @@ const AppRouter = () => {
   ));
   return (
     <Routes>
-      {user.isAuth && routesAuthComponents}
+      {true && routesAuthComponents}
       {routesPublicComponents}
       <Route path="*" element={<Navigate to={SHOP_ROUTE} replace />} />
     </Routes>
