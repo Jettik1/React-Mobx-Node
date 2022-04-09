@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const $host = axios.crete({
+const $host = axios.create({
   baseUrl: process.env.REACT_APP_API_URL,
 });
 
-const $authHost = axios.crete({
+const $authHost = axios.create({
   baseUrl: process.env.REACT_APP_API_URL,
 });
 
