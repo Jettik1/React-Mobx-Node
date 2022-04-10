@@ -13,7 +13,11 @@ const DeviceItem = ({ device }) => {
         border={"light"}
         onClick={() => history(DEVICE_ROUTE + "/" + device.id)}
       >
-        <Image width={150} height={150} src={device.img} />
+        <Image
+          width={150}
+          height={150}
+          src={process.env.REACT_APP_API_URL + device.img}
+        />
         <div className="mt-1">
           <div className="text-center">{device.name}</div>
         </div>
