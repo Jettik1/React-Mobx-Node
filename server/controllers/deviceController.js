@@ -11,7 +11,7 @@ class DeviceController {
       let hexString = uuid.v4(); // генерируем строку
       hexString = hexString.replace(/-/g, ""); // убираем лишние(декоративные) знаки
       let base64String = Buffer.from(hexString, "hex").toString("base64"); // получаем рандомную строку из рандомной hex-строки
-      let fileName = `${brandId}__${uuid.v4()}.jpg`; // Создаем имя файла
+      let fileName = `${brandId}_${typeId}_${uuid.v4()}.jpg`; // Создаем имя файла
       img.mv(path.resolve(__dirname, "..", "static", fileName));
       const device = await Device.create({
         name,

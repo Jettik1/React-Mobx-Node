@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "..";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar, NavLink } from "react-bootstrap";
 /* import { NavLink } from "react-router-dom"; */
 import { SHOP_ROUTE, LOGIN_ROUTE, ADMIN_ROUTE } from "../utils/consts";
 import { observer } from "mobx-react-lite";
@@ -19,15 +19,15 @@ const NavBar = observer(() => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand
+        {/* <Navbar.Brand
           style={{ borderBottom: "3px solid white", display: "inline" }}
-          href={SHOP_ROUTE}
+          href={SHOP_ROUTE} если использовать обычную ссылку то не сохраняется контекст
         >
           Антиквариат.ру
-        </Navbar.Brand>
-        {/* <NavLink style={{ color: "white" }} to={SHOP_ROUTE}>
-          Антиквариат
-        </NavLink> */}
+        </Navbar.Brand> */}
+        <NavLink style={{ color: "white" }} to={SHOP_ROUTE}>
+          Антиквариат.ру
+        </NavLink>
         {user.isAuth ? (
           <Nav className="ml-auto" style={{ color: "white" }}>
             <Button
