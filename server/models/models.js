@@ -20,7 +20,7 @@ const Device = sequelize.define("device", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   name: { type: DataTypes.STRING, unique: true, allowNull: false },
   price: { type: DataTypes.INTEGER, allowNull: false },
-  img: { type: DataTypes.STRING, allowNull: false },
+  description: { type: DataTypes.STRING, allowNull: false}
 });
 
 const Type = sequelize.define("type", {
@@ -33,10 +33,9 @@ const Brand = sequelize.define("brand", {
   name: { type: DataTypes.STRING, unique: true, allowNull: false },
 });
 
-const DeviceInfo = sequelize.define("device_info", {
+const DeviceImage = sequelize.define("device_image", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  title: { type: DataTypes.STRING, allowNull: false },
-  description: { type: DataTypes.STRING, allowNull: false },
+  name: { type: DataTypes.STRING, allowNull: false },
 });
 
 const TypeBrand = sequelize.define("type_brand", {
@@ -58,8 +57,8 @@ Device.belongsTo(Brand);
 Device.hasMany(BasketDevice);
 BasketDevice.belongsTo(Device);
 
-Device.hasMany(DeviceInfo, { as: "info" });
-DeviceInfo.belongsTo(Device);
+Device.hasMany(DeviceImage, { as: "img" });
+DeviceImage.belongsTo(Device);
 
 Type.belongsToMany(Brand, { through: TypeBrand });
 Brand.belongsToMany(Type, { through: TypeBrand });
@@ -72,5 +71,5 @@ module.exports = {
   Type,
   Brand,
   TypeBrand,
-  DeviceInfo,
+  DeviceImage,
 };
